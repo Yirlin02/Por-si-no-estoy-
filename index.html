@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti 💜</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('fondo.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    display: flex;
+    gap: 30px;
+    transition: 0.5s;
+}
+
+/* CUADROS */
+.card {
+    width: 220px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGEN */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MENSAJE */
+.message {
+    position: absolute;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TEXTO */
+.message p {
+    white-space: pre-line;
+    font-size: 16px;
+    color: #333;
+}
+
+/* BOTÓN */
+.back {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #6a5acd;
+    color: white;
+    cursor: pointer;
+}
+
+/* OCULTAR */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="cards">
+
+    <!-- Cuadro 1 -->
+    <div class="card" onclick="showMessage(1)">
+        <img src="cuadro1.jpg">
+    </div>
+
+    <!-- Cuadro 2 -->
+    <div class="card" onclick="showMessage(2)">
+        <img src="cuadro2.jpg">
+    </div>
+
+    <!-- Cuadro 3 -->
+    <div class="card" onclick="showMessage(3)">
+        <img src="cuadro3.jpg">
+    </div>
+
+    <!-- Cuadro 4 -->
+    <div class="card" onclick="showMessage(4)">
+        <img src="cuadro4.jpg">
+    </div>
+
+</div>
+
+<!-- MENSAJE 1 -->
+<div class="message" id="msg1">
+<p>
+Si me extrañas…
+
+No intentes hacer como si no pasara,
+porque yo también lo siento.
+
+Hay momentos en los que quisiera poder estar contigo,
+sin decir mucho…
+solo estar.
+
+Pero aunque no esté ahí físicamente,
+quiero que recuerdes algo importante:
+
+sigo contigo en cada momento.
+
+En lo que piensas, en lo que sientes, en cada momento en el que me buscas sin darte cuenta.
+
+Y aunque la distancia a veces se sienta fuerte,
+no cambia lo que somos.
+
+Así que si hoy me extrañas…
+no estás sola en eso.
+
+Yo también te estoy extrañando a ti, en cada recuerdo, en cada pensamiento, en cada deseo...
+</p>
+<button class="back" onclick="goBack()">Volver</button>
+</div>
+
+<!-- MENSAJE 2 -->
+<div class="message" id="msg2">
+<p>
+Si hoy no te sientes bien…
+no pasa nada.
+
+No tienes que explicarlo.
+No tienes que encontrar una razón.
+
+Hay días que simplemente pesan más,
+y eso también está bien.
+
+No te exijas estar bien todo el tiempo.
+No tienes que poder con todo hoy.
+
+Si te sientes cansada, descansa.
+Si te sientes abrumada, respira…
+poco a poco.
+
+Y aunque no esté ahí contigo,
+quiero que sepas algo:
+
+no estás sola.
+
+Estoy contigo en esto,
+incluso en los días en los que todo se siente más difícil.
+
+Así que tómate tu tiempo.
+No tienes que apresurarte.
+
+Todo puede esperar…
+tú no.
+</p>
+<button class="back" onclick="goBack()">Volver</button>
+</div>
+
+<!-- MENSAJE 3 -->
+<div class="message" id="msg3">
+<p>
+Si necesitas amor…
+ven aquí conmigo.
+
+No tienes que pedirlo,
+no tienes que decir nada…
+yo te lo doy.
+
+Porque te amo más de lo que a veces sé explicar,
+más de lo que digo en palabras,
+más de lo que logro demostrar estando lejos.
+
+Y aunque no pueda abrazarte ahora mismo,
+créeme…
+daría lo que fuera por tenerte cerca un segundo,
+por sentirte,
+por quedarme contigo sin que nada más importe.
+
+Así que si en algún momento sientes que te falta amor,
+
+cierra los ojos un momento…
+
+y recuerda que hay alguien que te piensa,
+que te ama,
+y que te elige incluso en la distancia.
+
+Porque mi amor por ti no depende de estar cerca…
+
+está contigo siempre.
+</p>
+<button class="back" onclick="goBack()">Volver</button>
+</div>
+
+<!-- MENSAJE 4 -->
+<div class="message" id="msg4">
+<p>
+Si alguna vez peleamos…
+
+Podemos molestarnos,
+podemos decir cosas sin pensar…
+pero eso no cambia lo que siento por ti.
+
+Yo no estoy en esto para rendirme a la primera.
+
+Estoy para quedarme,
+para arreglarlo,
+para entendernos incluso cuando no sea fácil.
+
+No quiero ganar una discusión
+si eso significa perderte.
+
+Te quiero a ti,
+incluso en esos momentos en los que todo se complica.
+
+Así que si algún día estamos mal…
+
+hablamos, lo arreglamos,
+pero no nos soltamos.
+
+Porque lo que tenemos
+vale demasiado
+como para dejarlo ir por un momento difícil.
+
+Y aunque a veces no sepamos cómo hacerlo bien…
+
+yo te sigo eligiendo.
+</p>
+<button class="back" onclick="goBack()">Volver</button>
+</div>
+
+<script>
+function showMessage(num) {
+    document.getElementById("cards").classList.add("hidden");
+    document.getElementById("msg" + num).style.display = "block";
+}
+
+function goBack() {
+    document.getElementById("cards").classList.remove("hidden");
+
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById("msg" + i).style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
